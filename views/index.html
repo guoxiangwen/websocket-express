@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <p>index.html</p>
+    <script src="javascripts/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:4000/');
+        socket.emit('msg', {
+            rp: "index页面发来问候"
+        });
+        socket.on('fuck', (msg) => {
+            console.log(msg)
+        })
+    </script>
+</body>
+
+</html>
